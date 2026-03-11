@@ -22,7 +22,8 @@ export default defineConfig({
   use: {
     baseURL: 'https://www.saucedemo.com/',
     trace: 'on-first-retry',
-    screenshot: 'only-on-failure'
+    screenshot: 'only-on-failure',
+    testIdAttribute: 'data-test',
   },
   /* Run tests in files in parallel */
   fullyParallel: true,

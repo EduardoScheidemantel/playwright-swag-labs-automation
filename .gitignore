@@ -1,3 +1,16 @@
+# Dependências do Node
+node_modules/
+
+# Pastas geradas automaticamente pelo playwright-bdd
+.features-gen/
+
+# Relatórios e resultados de testes do Playwright
+playwright-report/
+test-results/
+blob-report/
+
+# Arquivos de ambiente
+.env
 
 # Playwright
 node_modules/
