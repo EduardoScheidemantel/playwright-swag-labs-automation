@@ -1,5 +1,11 @@
 import { Page, Locator } from '@playwright/test';
 
+  const loginCredentials = {
+    standardUsername: 'standard_user',
+    lockedUser: 'locked_out_user',
+    password: 'secret_sauce',
+  }
+
 export class LoginPage {
   readonly page: Page;
   readonly usernameInput: Locator;
@@ -17,7 +23,13 @@ export class LoginPage {
     await this.page.goto('/');
   }
 
-  async login(username:string, password: string) {
+  async defaultUserLogin() {
+    await this.usernameInput.fill(loginCredentials.standardUsername);
+    await this.passwordInput.fill(loginCredentials.password);
+    await this.loginButton.click();
+  }
+
+  async invalidLogin(username:string, password:string) {
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginButton.click();

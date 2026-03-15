@@ -13,6 +13,7 @@ const testDir = defineBddConfig({
   features: 'src/features/**/*.feature',
   steps: 'src/steps/**/*.ts',
   importTestFrom: 'src/support/fixtures.ts',
+  disableWarnings: { importTestFrom: true }
 });
 /**
  * See https://playwright.dev/docs/test-configuration.
